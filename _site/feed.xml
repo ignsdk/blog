@@ -142,26 +142,5 @@
         <guid isPermaLink="true">/Wifi-IGN-IoT/</guid>
       </item>
     
-      <item>
-        <title>IGNSDK 1.1.6 dirilis!</title>
-        <description>&lt;p&gt;jkajfkda jkhajkhda jkhfjka &lt;/p&gt;
-</description>
-        <pubDate>Sun, 02 Nov 2014 00:00:00 +0700</pubDate>
-        <link>/ignsdk116/</link>
-        <guid isPermaLink="true">/ignsdk116/</guid>
-      </item>
-    
-      <item>
-        <title>You&#39;re up and running!</title>
-        <description>Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below &lt;img class=&#39;emoji&#39; title=&#39;:point_down:&#39; alt=&#39;:point_down:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f447.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;).
-
-![_config.yml](/images/config.png)
-
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.</description>
-        <pubDate>Mon, 03 Mar 2014 00:00:00 +0700</pubDate>
-        <link>/Hello-World.md/</link>
-        <guid isPermaLink="true">/Hello-World.md/</guid>
-      </item>
-    
   </channel>
 </rss>
