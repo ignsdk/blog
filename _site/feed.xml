@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jurnal IGNSDK</title>
+    <description>Rock, Love, and Code</description>
+    <link></link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Wifi Ign Iot</title>
+        <description>&lt;h2 id=&quot;cara-mengaktifkan-wifi-via-terminal&quot;&gt;Cara mengaktifkan wifi via terminal&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/4461503/8298796/306dffba-1998-11e5-957f-16cf5751d3b0.jpg&quot; alt=&quot;edimax-ew-7811un-150mbps-wireless-ieee80211b-g-n-nano-usb-adapter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(1) cek dengan perintah&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@iotign ~ # dmesg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;apabila usb wifi bisa dikenali akan ada keterangan seperti dibawah ini&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;[ 4404.222079] usb 1-1.4: Product: 802.11n WLAN Adapter
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;[ 4404.227219] usb 1-1.4: Manufacturer: Realtek
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n3&quot; name=&quot;n3&quot;&gt;3&lt;/a&gt;&lt;/span&gt;[ 4404.231601] usb 1-1.4: SerialNumber: 00e04c000001
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(2) kemudian cek juga dengan perintah&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@iotign ~ # lsmod
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;untuk mengetahui driver bisa digunakan atau tidak apabila driver dikenali akan muncul keterangan seperti dibawah ini&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;Module                  Size  Used by
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;8192cu                528365  0 
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n3&quot; name=&quot;n3&quot;&gt;3&lt;/a&gt;&lt;/span&gt;uio_pdrv_genirq         2958  0 
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n4&quot; name=&quot;n4&quot;&gt;4&lt;/a&gt;&lt;/span&gt;uio                     8119  1 uio_pdrv_genirq
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n5&quot; name=&quot;n5&quot;&gt;5&lt;/a&gt;&lt;/span&gt;ipv6                  333976  24 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(3) cek menggunakan perintah &lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@iotign ~ # ip addr
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;apabila ethercard wifi sudah terbaca akan muncul tulisan&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;4: wlan0: &amp;lt;BROADCAST,MULTICAST&amp;gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(4) aktifkan dengan perintah &lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@iotign ~ # ifconfig wlan0 up
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;(5) ketik perintah&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@iotign ~ # iwlist wlan0 scan
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;untuk melakukan scanning Access Point Wifi yang tersedia, apabila ada akan muncul keterangan seperti dibawah&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;wlan0     Scan completed :
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;        
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n3&quot; name=&quot;n3&quot;&gt;3&lt;/a&gt;&lt;/span&gt;          Cell 01 - Address: 00:0C:43:C0:B6:CE
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n4&quot; name=&quot;n4&quot;&gt;4&lt;/a&gt;&lt;/span&gt;                    ESSID:&amp;quot;malware!!&amp;quot;
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n5&quot; name=&quot;n5&quot;&gt;5&lt;/a&gt;&lt;/span&gt;                    Protocol:IEEE 802.11bg
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n6&quot; name=&quot;n6&quot;&gt;6&lt;/a&gt;&lt;/span&gt;                    Mode:Master
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n7&quot; name=&quot;n7&quot;&gt;7&lt;/a&gt;&lt;/span&gt;                    Frequency:2.437 GHz (Channel 6)
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n8&quot; name=&quot;n8&quot;&gt;8&lt;/a&gt;&lt;/span&gt;                    Encryption key:on
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n9&quot; name=&quot;n9&quot;&gt;9&lt;/a&gt;&lt;/span&gt;                    Bit Rates:54 Mb/s
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n10&quot; name=&quot;n10&quot;&gt;10&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;                    Extra:rsn_ie=30140100000fac020100000fac020100000fac020000
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n11&quot; name=&quot;n11&quot;&gt;11&lt;/a&gt;&lt;/span&gt;                    IE: IEEE 802.11i/WPA2 Version 1
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n12&quot; name=&quot;n12&quot;&gt;12&lt;/a&gt;&lt;/span&gt;                        Group Cipher : TKIP
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n13&quot; name=&quot;n13&quot;&gt;13&lt;/a&gt;&lt;/span&gt;                        Pairwise Ciphers (1) : TKIP
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n14&quot; name=&quot;n14&quot;&gt;14&lt;/a&gt;&lt;/span&gt;                        Authentication Suites (1) : PSK
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n15&quot; name=&quot;n15&quot;&gt;15&lt;/a&gt;&lt;/span&gt;                    IE: Unknown: DD9D0050F204104A0001101044000102103B000103104700102880288028801880A880000C43C0B6CE1021001852616C696E6B20546563686E6F6C6F67792C20436F72702E1023001C52616C696E6B20576972656C6573732041636365737320506F696E74102400065254323836301042000831323334353637381054000800060050F20400011011000952616C696E6B415053100800020084103C000101
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n16&quot; name=&quot;n16&quot;&gt;16&lt;/a&gt;&lt;/span&gt;                    Quality=48/100  Signal level=100/100  
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(6) ketik 
+~~~bash 
+nano /etc/wpa_supplicant/wpa_supplicant.conf
+~~~&lt;/p&gt;
+
+&lt;p&gt;kemudian tambahkan tulisan dibawah dibagian palah bawah konfigurasi
+~~~bash
+network={
+    ssid=”NAMA SSID ACCESS POINT”
+    psk=”PASSWORD”
+}
+~~~&lt;/p&gt;
+
+&lt;p&gt;(7)setelah diedit restart perangkat jaringan dengan&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@igniot# ifdown wlan0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@igniot# ifup wlan0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(8)reboot&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Sep 2015 00:00:00 +0700</pubDate>
+        <link>/Wifi-ign-iot/</link>
+        <guid isPermaLink="true">/Wifi-ign-iot/</guid>
+      </item>
+    
+      <item>
+        <title>IGNSDK 1.1.6 dirilis!</title>
+        <description>&lt;p&gt;jkajfkda jkhajkhda jkhfjka &lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Nov 2014 00:00:00 +0700</pubDate>
+        <link>/ignsdk116/</link>
+        <guid isPermaLink="true">/ignsdk116/</guid>
+      </item>
+    
+      <item>
+        <title>You&#39;re up and running!</title>
+        <description>Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below &lt;img class=&#39;emoji&#39; title=&#39;:point_down:&#39; alt=&#39;:point_down:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f447.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;).
+
+![_config.yml](/images/config.png)
+
+The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.</description>
+        <pubDate>Mon, 03 Mar 2014 00:00:00 +0700</pubDate>
+        <link>/Hello-World.md/</link>
+        <guid isPermaLink="true">/Hello-World.md/</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,123 @@
+<h2 id="cara-mengaktifkan-wifi-via-terminal">Cara mengaktifkan wifi via terminal</h2>
+
+<p><img src="https://cloud.githubusercontent.com/assets/4461503/8298796/306dffba-1998-11e5-957f-16cf5751d3b0.jpg" alt="edimax-ew-7811un-150mbps-wireless-ieee80211b-g-n-nano-usb-adapter" /></p>
+
+<p>(1) cek dengan perintah</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>root@iotign ~ # dmesg
+</pre></div>
+</div>
+</div>
+
+<p>apabila usb wifi bisa dikenali akan ada keterangan seperti dibawah ini</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>[ 4404.222079] usb 1-1.4: Product: 802.11n WLAN Adapter
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>[ 4404.227219] usb 1-1.4: Manufacturer: Realtek
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>[ 4404.231601] usb 1-1.4: SerialNumber: 00e04c000001
+</pre></div>
+</div>
+</div>
+
+<p>(2) kemudian cek juga dengan perintah</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>root@iotign ~ # lsmod
+</pre></div>
+</div>
+</div>
+
+<p>untuk mengetahui driver bisa digunakan atau tidak apabila driver dikenali akan muncul keterangan seperti dibawah ini</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Module                  Size  Used by
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>8192cu                528365  0 
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>uio_pdrv_genirq         2958  0 
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>uio                     8119  1 uio_pdrv_genirq
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>ipv6                  333976  24 
+</pre></div>
+</div>
+</div>
+
+<p>(3) cek menggunakan perintah </p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>root@iotign ~ # ip addr
+</pre></div>
+</div>
+</div>
+
+<p>apabila ethercard wifi sudah terbaca akan muncul tulisan</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>4: wlan0: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+</pre></div>
+</div>
+</div>
+
+<p>(4) aktifkan dengan perintah </p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>root@iotign ~ # ifconfig wlan0 up
+</pre></div>
+</div>
+</div>
+<p>(5) ketik perintah</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>root@iotign ~ # iwlist wlan0 scan
+</pre></div>
+</div>
+</div>
+
+<p>untuk melakukan scanning Access Point Wifi yang tersedia, apabila ada akan muncul keterangan seperti dibawah</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>wlan0     Scan completed :
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>        
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>          Cell 01 - Address: 00:0C:43:C0:B6:CE
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>                    ESSID:&quot;malware!!&quot;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>                    Protocol:IEEE 802.11bg
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>                    Mode:Master
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>                    Frequency:2.437 GHz (Channel 6)
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>                    Encryption key:on
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>                    Bit Rates:54 Mb/s
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>                    Extra:rsn_ie=30140100000fac020100000fac020100000fac020000
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>                    IE: IEEE 802.11i/WPA2 Version 1
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>                        Group Cipher : TKIP
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>                        Pairwise Ciphers (1) : TKIP
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>                        Authentication Suites (1) : PSK
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>                    IE: Unknown: DD9D0050F204104A0001101044000102103B000103104700102880288028801880A880000C43C0B6CE1021001852616C696E6B20546563686E6F6C6F67792C20436F72702E1023001C52616C696E6B20576972656C6573732041636365737320506F696E74102400065254323836301042000831323334353637381054000800060050F20400011011000952616C696E6B415053100800020084103C000101
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>                    Quality=48/100  Signal level=100/100  
+</pre></div>
+</div>
+</div>
+
+<p>(6) ketik 
+~~~bash 
+nano /etc/wpa_supplicant/wpa_supplicant.conf
+~~~</p>
+
+<p>kemudian tambahkan tulisan dibawah dibagian palah bawah konfigurasi
+~~~bash
+network={
+    ssid=”NAMA SSID ACCESS POINT”
+    psk=”PASSWORD”
+}
+~~~</p>
+
+<p>(7)setelah diedit restart perangkat jaringan dengan</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>root@igniot# ifdown wlan0
+</pre></div>
+</div>
+</div>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>root@igniot# ifup wlan0
+</pre></div>
+</div>
+</div>
+
+<p>(8)reboot</p>
