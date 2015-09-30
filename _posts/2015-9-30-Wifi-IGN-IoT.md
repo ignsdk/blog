@@ -1,6 +1,6 @@
 ---
 layout: post
-title: WIFI IGNSDK-IoT
+title: WIFI IGN-IoT
 ---
 
 ![edimax-ew-7811un-150mbps-wireless-ieee80211b-g-n-nano-usb-adapter](https://cloud.githubusercontent.com/assets/4461503/8298796/306dffba-1998-11e5-957f-16cf5751d3b0.jpg)
@@ -81,11 +81,13 @@ wlan0     Scan completed :
 ~~~
 
 (6) ketik 
+
 ~~~bash 
 nano /etc/wpa_supplicant/wpa_supplicant.conf
 ~~~
 
 kemudian tambahkan tulisan dibawah dibagian palah bawah konfigurasi
+
 ~~~bash
 network={
     ssid="NAMA SSID ACCESS POINT"
@@ -98,6 +100,7 @@ network={
 ~~~bash
 root@igniot# ifdown wlan0
 ~~~
+
 ~~~bash
 root@igniot# ifup wlan0
 ~~~

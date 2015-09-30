@@ -7,7 +7,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>WIFI IGNSDK-IoT</title>
+        <title>WIFI IGN-IoT</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/4461503/8298796/306dffba-1998-11e5-957f-16cf5751d3b0.jpg&quot; alt=&quot;edimax-ew-7811un-150mbps-wireless-ieee80211b-g-n-nano-usb-adapter&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;(1) cek dengan perintah&lt;/p&gt;
@@ -102,18 +102,24 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;(6) ketik 
-~~~bash 
-nano /etc/wpa_supplicant/wpa_supplicant.conf
-~~~&lt;/p&gt;
+&lt;p&gt;(6) ketik &lt;/p&gt;
 
-&lt;p&gt;kemudian tambahkan tulisan dibawah dibagian palah bawah konfigurasi
-~~~bash
-network={
-    ssid=”NAMA SSID ACCESS POINT”
-    psk=”PASSWORD”
-}
-~~~&lt;/p&gt;
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;nano /etc/wpa_supplicant/wpa_supplicant.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;kemudian tambahkan tulisan dibawah dibagian palah bawah konfigurasi&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;network={
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;    ssid=&amp;quot;NAMA SSID ACCESS POINT&amp;quot;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n3&quot; name=&quot;n3&quot;&gt;3&lt;/a&gt;&lt;/span&gt;    psk=&amp;quot;PASSWORD&amp;quot;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n4&quot; name=&quot;n4&quot;&gt;4&lt;/a&gt;&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;p&gt;(7)setelah diedit restart perangkat jaringan dengan&lt;/p&gt;
 
@@ -122,6 +128,7 @@ network={
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
   &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;root@igniot# ifup wlan0
 &lt;/pre&gt;&lt;/div&gt;
